@@ -1,0 +1,12 @@
+name: Scheduled Job
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  Scheduled_Job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Running on Interval
+        run:  echo "this job is set to run every midnight"
