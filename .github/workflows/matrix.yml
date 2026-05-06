@@ -10,6 +10,7 @@ jobs:
     strategy:
       matrix:
         python versions: [3.10, 3.11, 3.12]
+        os: [windows-latest, macos-latest]
         
     steps:
       - name: Checkout Repository
