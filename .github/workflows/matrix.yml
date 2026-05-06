@@ -1,0 +1,27 @@
+name: Matrix Strategy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python versions: [3.10, 3.11, 3.12]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python versions: ${{ matrix.python-version }}
+      - name: Prints the python version
+        run: python --version
+
+        
+        
+
+             
+        
+      
