@@ -15,7 +15,7 @@ jobs:
         os: [windows-latest, macos-latest]
 
         exclude: 
-         - python version: 3.11
+         - python versions: 3.11
            os: macos-latest
          
     steps:
