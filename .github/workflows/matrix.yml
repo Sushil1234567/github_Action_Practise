@@ -15,8 +15,8 @@ jobs:
         os: [windows-latest, macos-latest]
 
         exclude: 
-          python version: 3.11
-          os: macos-latest
+         - python version: 3.11
+           os: macos-latest
          
     steps:
       - name: Checkout Repository
