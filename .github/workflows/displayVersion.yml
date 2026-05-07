@@ -1,0 +1,26 @@
+name: Installed Versions
+on:
+ push:
+   branches: [main]
+
+jobs:
+  Display_Version:
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: Display Docker Version
+         run:  docker --v
+
+       - name: Display Python Version
+         run:  python --v
+
+       - name: Display Node Version
+         run:  node --v
+
+       - name: Display Git Version
+         run:  git --version
+
+
+         
+
+   
