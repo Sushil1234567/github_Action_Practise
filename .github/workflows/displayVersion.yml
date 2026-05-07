@@ -9,16 +9,16 @@ jobs:
 
      steps:
        - name: Display Docker Version
-         run:  docker --v
+         run:  docker --V
 
        - name: Display Python Version
-         run:  python --v
+         run:  python --V
 
        - name: Display Node Version
-         run:  node --v
+         run:  node --V
 
        - name: Display Git Version
-         run:  git --version
+         run:  git --V
 
 
          
