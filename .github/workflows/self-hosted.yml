@@ -6,7 +6,7 @@ on:
       
 jobs:
   Runner:
-    runs-on: SelfHosted
+    runs-on: self-hosted
     
     steps:
       - name: Prints Hostname
