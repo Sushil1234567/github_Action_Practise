@@ -1,0 +1,27 @@
+name: Self Hosted Runner
+on:
+  push:
+    branches: [main]
+      
+      
+jobs:
+  Runner:
+    runs-on: SelfHosted
+    
+    steps:
+      - name: Prints Hostname
+        run: hostname
+       
+      - name: Prints working directory
+        run: pwd
+       
+      - name: Create a file
+        run: echo "Yes, the file exists" > FileCreated.txt
+
+
+        
+
+      
+    
+    
+  
