@@ -1,0 +1,18 @@
+name: Job Outputs
+on:
+ push:
+   branches: [main]
+
+jobs:
+  show_date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show todays date
+        run:  echo "Todays date is $(date)" >> GITHUB_OUTPUT
+
+
+        
+    
+
+    
+    
