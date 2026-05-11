@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show todays date
-        run:  echo "date=$(date)" >> GITHUB_OUTPUT
+        run:  echo "date=$(date)" >> $GITHUB_OUTPUT
 
 
         
