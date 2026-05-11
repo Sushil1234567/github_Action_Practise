@@ -1,0 +1,25 @@
+name: Environment Variables
+on:
+  push:
+     branches: [main]
+
+env:
+  APP_NAME: myapp
+
+jobs:
+   Scope:
+      runs-on: ubuntu-latest
+      env:
+         ENVIRONMENT: staging
+      steps:
+         env:
+           VERSION: 1.0.0
+       - name: Prints the Env. variable at workflow , job and step level
+         run: |
+           echo "App is: $APP_NAME "
+           echo "Environment is: $ENVIRONMRNT "
+           echo "Version is: $VERSION"
+           
+    
+  
+     
