@@ -4,11 +4,19 @@ on:
    branches: [main]
 
 jobs:
+  set_date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set todays date
+        run:  echo "date=$(date)" >> $GITHUB_OUTPUT
+
   show_date:
     runs-on: ubuntu-latest
     steps:
-      - name: Show todays date
-        run:  echo "date=$(date)" >> $GITHUB_OUTPUT
+      - name: Show the set date
+        run:  echo "{{ needs.set_date.outputs.date }}"
+        
+        
 
 
         
