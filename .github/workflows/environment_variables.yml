@@ -21,11 +21,11 @@ jobs:
          echo "Environment is: $ENVIRONMENT "
          echo "Version is: $VERSION "
 
-      - name: Checking access of the variables
+      - name: Verify access of the variables
         run: |
-         echo "$APP_NAME :workflow variables has scope from steps level"
-         echo "$ENVIRONMENT :job variables has scope from step level"
-         echo "$VERSION :step variables has scope from step level"
+         echo "$APP_NAME :workflow variables are accessible from all steps level"
+         echo "$ENVIRONMENT :job variables are accessible from all steps level"
+         echo "$VERSION :step variables are not accessible from all steps level "
            
       
            
