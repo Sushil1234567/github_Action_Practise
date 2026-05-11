@@ -20,6 +20,12 @@ jobs:
          echo "App is: $APP_NAME "
          echo "Environment is: $ENVIRONMENT "
          echo "Version is: $VERSION "
+
+      - name: Checking access of the variables
+        run: |
+         echo "$APP_NAME :workflow variables has scope from steps level"
+         echo "$ENVIRONMENT :job variables has scope from step level"
+         echo "$VERSION :step variables has scope from step level"
            
       
            
