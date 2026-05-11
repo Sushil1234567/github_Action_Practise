@@ -27,7 +27,11 @@ jobs:
          echo "$ENVIRONMENT :job variables are accessible from all steps level"
          echo "$VERSION :step variables are not accessible from all steps level "
            
-      
+      - name: Using Github Context Variables
+        run:  |
+         echo "Commit SHA: ${{ github.sha }}
+         echo "This workflow is triggered by: ${{ github.actor }}
+        
            
     
   
