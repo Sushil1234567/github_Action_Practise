@@ -5,16 +5,23 @@ on:
 
 jobs:
   set_date:
+    
     runs-on: ubuntu-latest
     steps:
       - name: Set todays date
-        run:  echo "date=$(date)" >> $GITHUB_OUTPUT
+        id:   today
+        run:  echo "d=$(date)" >> $GITHUB_OUTPUT
+
+    outputs:
+      date: ${{ steps.today.outputs.d }}
+          
 
   show_date:
     runs-on: ubuntu-latest
+    needs: set_date
     steps:
       - name: Show the set date
-        run:  echo "{{ needs.set_date.outputs.date }}"
+        run:  echo "${{ needs.set_date.outputs.date }}"
         
         
 
