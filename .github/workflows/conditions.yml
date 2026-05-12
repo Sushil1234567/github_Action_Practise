@@ -11,13 +11,6 @@ jobs:
         if:   github.ref_name == 'main'
         run:  echo "This is main branch"
 
-      - name: Failing step for next step !  
-        run:  exit 1
-        continue-on-error: true
-
-      - name: Prints even if previous step failed
-        run:  echo "Workflow continues"
-
       - name: Failing step for the next step !
         run:  exit 1
 
@@ -33,4 +26,11 @@ jobs:
     steps:
       - name: Prints the message
         run:  echo "Ran when event is push"
+
+      - name: Failing step for next step !  
+        run:  exit 1
+        continue-on-error: true
+
+      - name: Prints even if previous step failed
+        run:  echo "Workflow continues"
         
