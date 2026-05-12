@@ -1,0 +1,34 @@
+name: Conditions
+on:
+ push:
+   branches: [main]
+
+jobs:
+  MultipleSteps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: This runs only when the branch is main
+        if:   github.ref_name == 'main'
+        run:  echo "This is main branch"
+
+      - name: Failing step for the next step !
+        run:  exit 1
+
+      - name: Runs if when the previous step fails 
+        if:   failure()
+        run:  echo "This ran because the previos step failed"
+
+      - name: Failing step for next step !  
+        run:  exit 1
+        continue-on-error: true
+
+      - name: Prints even if previous step failed
+        run:  echo "Workflow continues"
+        
+  RunsOnPush:
+    runs-on: ubuntu-latest
+    if:      github.event_name == 'push'
+    steps:
+      - name: Prints the message
+        run:  echo "Ran when event is push"
+        
