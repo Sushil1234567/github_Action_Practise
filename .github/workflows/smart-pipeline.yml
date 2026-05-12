@@ -6,12 +6,14 @@ jobs:
   Lint:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.job }}"
+      - run: |
+          echo "Job: ${{ github.job }}"
 
   Test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.job }}"
+      - run: |
+          echo "Job: ${{ github.job }}"
 
   Summary:
     runs-on: ubuntu-latest
