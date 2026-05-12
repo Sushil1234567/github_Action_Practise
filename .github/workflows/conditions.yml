@@ -11,6 +11,13 @@ jobs:
         if:   github.ref_name == 'main'
         run:  echo "This is main branch"
 
+      - name: Failing step for next step !  
+        run:  exit 1
+        continue-on-error: true
+
+      - name: Prints even if previous step failed
+        run:  echo "Workflow continues"
+
       - name: Failing step for the next step !
         run:  exit 1
 
@@ -18,12 +25,7 @@ jobs:
         if:   failure()
         run:  echo "This ran because the previos step failed"
 
-      - name: Failing step for next step !  
-        run:  exit 1
-        continue-on-error: true
-
-      - name: Prints even if previous step failed
-        run:  echo "Workflow continues"
+      
         
   RunsOnPush:
     runs-on: ubuntu-latest
