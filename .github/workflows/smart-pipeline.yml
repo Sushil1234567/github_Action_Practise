@@ -22,8 +22,6 @@ jobs:
       - name: Prints the branch name and the commit message
         run: |
           echo "Branch name: ${{ github.ref_name }}"
-          echo "Commit message: ${{ github.event.commits.message }}"
-          
-         #echo "Commit message: ${{ github.event.head_commit.message }}"
+          echo "Commit message: ${{ github.event.head_commit.message }}"
 
           
