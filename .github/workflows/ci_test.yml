@@ -23,7 +23,7 @@ jobs:
            
 
     - name: Run the Python app
-      run: python app.py
+      run:  python flask-3tier-docker-app/app/app.py
         
       
 
