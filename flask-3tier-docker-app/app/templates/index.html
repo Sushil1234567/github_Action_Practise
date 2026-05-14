@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3-Tier App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Visitor Counter</h1>
+        <p id="visits">Loading...</p>
+        <button onclick="loadData()">Refresh</button>
+    </div>
+
+    <script>
+        async function loadData() {
+            const res = await fetch('/api/visits');
+            const data = await res.json();
+            document.getElementById("visits").innerText =
+                "Visits: " + data.visits + " (" + data.source + ")";
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
