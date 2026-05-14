@@ -22,7 +22,7 @@ topdiskusage() {
 
         echo " top disk usage info "
         sudo du -sh * | sort -rh | head -5
-        echo " ----------------------------- 
+        echo " ----------------------------"
 }
 
 memoryusage() {
