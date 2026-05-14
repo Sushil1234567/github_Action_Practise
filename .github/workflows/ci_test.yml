@@ -15,10 +15,10 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Build the Docker image
-      run:  docker build -t flask-3tier-docker-app/app/my-python-app .
+      run:  docker build -t flask-3tier-docker-app/app .
 
     - name: Run the Docker container
-      run:  docker run my-python-app
+      run:  docker run app
         
       
 
