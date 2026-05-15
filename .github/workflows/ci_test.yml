@@ -23,7 +23,8 @@ jobs:
       run: chmod 777 system_info.sh
         
     - name: Run the script
-      run: ./system_info.sh
+      run: ./system_info.sh.
+      
 
     
   
