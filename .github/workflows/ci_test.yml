@@ -20,7 +20,7 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: Make script executable
-      run: chmod +x system_info.sh
+      run: chmod 777 system_info.sh
         
     - name: Run the script
       run: ./system_info.sh
