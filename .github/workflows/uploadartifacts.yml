@@ -17,15 +17,7 @@ jobs:
           name: execution-logs
           path: logfile.txt
         
-  Download: 
-    runs-on: ubuntu-latest
-    needs: Upload
-    steps:
-      - name: Download Logs
-        uses: actions/download-artifact@v4
-        with:
-          name: execution-logs
-          path: download-logs/
+  
             
         
 
