@@ -29,7 +29,7 @@ memoryusage() {
 
         echo " memory usage info "
         sudo free -h
-        echo " ------------------ 
+        echo " ------------------ "
 }
 
 topcpuUsage() {
