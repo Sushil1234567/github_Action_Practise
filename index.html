@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduFlix - Learn Without Limits</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 16px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+      background: linear-gradient(to right, #0f172a, #1e3a8a);
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #dbeafe;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #38bdf8;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+    }
+
+    .hero-image img {
+      width: 420px;
+      max-width: 100%;
+    }
+
+    .courses {
+      padding: 70px 60px;
+    }
+
+    .courses h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      color: #111827;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 20px;
+    }
+
+    .course-content h3 {
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .course-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .stats {
+      background: #111827;
+      color: white;
+      padding: 60px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .stat-box h3 {
+      font-size: 38px;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #020617;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 60px 25px;
+      }
+
+      .hero-text h1 {
+        font-size: 38px;
+      }
+
+      .courses {
+        padding: 50px 25px;
+      }
+
+      .stats {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">EduFlix</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Learn Skills That Shape Your Future</h1>
+      <p>
+        EduFlix offers high-quality online courses in programming,
+        cloud computing, AI, DevOps, business, and more.
+      </p>
+
+      <a href="#" class="btn">Start Learning</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Students Learning">
+    </div>
+  </section>
+
+  <section class="courses">
+    <h2>Popular Courses</h2>
+
+    <div class="course-grid">
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Web Development">
+
+        <div class="course-content">
+          <h3>Full Stack Web Development</h3>
+          <p>Learn HTML, CSS, JavaScript, React, Node.js, and databases.</p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Cloud Computing">
+
+        <div class="course-content">
+          <h3>Cloud & DevOps</h3>
+          <p>Master AWS, Docker, Kubernetes, CI/CD, and automation tools.</p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="AI Course">
+
+        <div class="course-content">
+          <h3>Artificial Intelligence</h3>
+          <p>Build AI and machine learning projects with Python.</p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="stats">
+
+    <div class="stat-box">
+      <h3>50K+</h3>
+      <p>Students</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>200+</h3>
+      <p>Courses</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>120+</h3>
+      <p>Expert Mentors</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>95%</h3>
+      <p>Success Rate</p>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 EduFlix. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
