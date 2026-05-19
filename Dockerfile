@@ -1,4 +1,4 @@
-FROM nginx -slim
+FROM nginx:slim
 
 RUN rm -rf /usr/share/nginx/html/*
 
