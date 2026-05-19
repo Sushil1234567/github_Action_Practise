@@ -4,14 +4,15 @@ on:
   branches: [main]
 
 jobs:
-  build:
-    runs-on: ububuntu-latest
+  BuildJob:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Build image
-        run:  docker build -t nginxapp: v1 .
+      - name: Build Image
+        run:  |
+          docker build -t nginxapp: v1 .
 
         
 
