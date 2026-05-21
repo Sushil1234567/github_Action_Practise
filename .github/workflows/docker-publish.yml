@@ -25,11 +25,12 @@ jobs:
 
       - name: Build & Push   
         uses: docker/build-push-action@v6
+        if:   github.ref_name == 'main'
         with: 
           context: .
           push: true
           tags: |
-              ${{ vars.DOCKER_USERNAME }}/nginxapp:latest
+              ${{ vars.DOCKER_USERNAME }}/nginxapp:main
               ${{ vars.DOCKER_USERNAME }}/nginxapp:${{ env.SLICED_SHA }}
 
             
