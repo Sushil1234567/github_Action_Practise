@@ -1,7 +1,7 @@
 name: Nginx App
 on: 
  push: 
-  branches: [main]
+  branches: [feature]
 
 jobs:
   BuildJob:
@@ -25,12 +25,11 @@ jobs:
 
       - name: Build & Push   
         uses: docker/build-push-action@v6
-        if:   github.ref_name == 'main'
         with: 
           context: .
-          push: true
+          push: ${{ github.ref_name == 'main' }}
           tags: |
-              ${{ vars.DOCKER_USERNAME }}/nginxapp:main
+              ${{ vars.DOCKER_USERNAME }}/nginxapp:feature
               ${{ vars.DOCKER_USERNAME }}/nginxapp:${{ env.SLICED_SHA }}
 
             
