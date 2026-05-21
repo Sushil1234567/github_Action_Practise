@@ -32,6 +32,8 @@ jobs:
               ${{ vars.DOCKER_USERNAME }}/nginxapp:feature
               ${{ vars.DOCKER_USERNAME }}/nginxapp:${{ env.SLICED_SHA }}
 
+
+
             
           
 
