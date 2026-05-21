@@ -1,7 +1,7 @@
 name: Nginx App
 on: 
  push: 
-  branches: [feature]
+  branches: [main]
 
 jobs:
   BuildJob:
@@ -29,7 +29,7 @@ jobs:
           context: .
           push: ${{ github.ref_name == 'main' }}
           tags: |
-              ${{ vars.DOCKER_USERNAME }}/nginxapp:feature
+              ${{ vars.DOCKER_USERNAME }}/nginxapp:newmain
               ${{ vars.DOCKER_USERNAME }}/nginxapp:${{ env.SLICED_SHA }}
 
 
