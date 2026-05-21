@@ -1,0 +1,44 @@
+name: Nginx App
+on: 
+ push: 
+  branches: [feature]
+
+jobs:
+  BuildJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+#      - name: Build Image
+#        run:  |
+#          docker build -t nginxapp:v1 .
+
+      - name: Login to Dockerhub via Secrets
+        uses: docker/login-action@v3
+        with: 
+           username: ${{ vars.DOCKER_USERNAME }}
+           password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Slicing the SHA 
+        run:  echo "SLICED_SHA=${GITHUB_SHA:0:7}" >> $GITHUB_ENV 
+
+      - name: Build & Push   
+        uses: docker/build-push-action@v6
+        with: 
+          context: .
+          push: ${{ github.ref_name == 'main' }}
+          tags: |
+              ${{ vars.DOCKER_USERNAME }}/nginxapp:feature
+              ${{ vars.DOCKER_USERNAME }}/nginxapp:${{ env.SLICED_SHA }}
+
+            
+          
+
+
+          
+
+        
+
+
+        

@@ -1,0 +1,24 @@
+name: Upload Artifacts
+on: 
+ push:
+   branches: [main]
+
+jobs:
+  Upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generates Logs
+        run: |
+          echo "Timestamp: $(date)" > logfile.txt
+          echo "Runner OS: $RUNNER_OS" >> logfile.txt
+      - name: Upload Logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: execution-logs
+          path: logfile.txt
+        
+  
+            
+        
+
+   
