@@ -1,0 +1,32 @@
+name: ReusableBuild
+on: 
+  workflow_call: 
+    inputs:
+      app_name: 
+        required: true
+        type: string
+        
+      environment: 
+        required: true
+        type: string
+        default: staging
+
+    secrets: 
+      docker-token: 
+        required: true
+
+jobs:
+  ReusableJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Print 
+        run: |
+          echo " Building $GITHUB_REPOSITORY for $ENV_NAME "
+          echo " Docker token is set : true "
+
+      
+          
+           
