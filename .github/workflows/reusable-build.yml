@@ -24,7 +24,7 @@ jobs:
         
       - name: Print 
         run: |
-          echo " Building $GITHUB_REPOSITORY for $ENV_NAME "
+          echo " Building $GITHUB_REPOSITORY for ${{ inputs.environment }} "
           echo " Docker token is set : true "
 
       
