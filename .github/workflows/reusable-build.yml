@@ -14,19 +14,35 @@ on:
     secrets: 
       docker-token: 
         required: true
+    
+    outputs: 
+      build_version: 
+        value : ${{ jobs.ReusableJob.outputs.build_version }}    
+
+      
+
 
 jobs:
-  ReusableJob:
+  ReusableJob:    
     runs-on: ubuntu-latest
+    
+    outputs:
+      build_version: ${{ steps.version.outputs.Version }}
+      
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        
+
       - name: Print 
         run: |
           echo " Building $GITHUB_REPOSITORY for ${{ inputs.environment }} "
           echo " Docker token is set : true "
 
-      
+      - name: Generate & set Version
+        id:   version
+        run:  | 
+          SHORT_SHA=${GITHUB_SHA:0:5}
+          VERSION="v$SHORT_SHA" 
+          echo "Version=$VERSION" >> $GITHUB_OUTPUT
           
            
