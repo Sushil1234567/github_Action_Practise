@@ -1,0 +1,22 @@
+name: Action Workflow
+on:
+ push:
+   branches: [ main ]
+
+jobs:
+  Call_CompositeAction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Calls Greet
+        id: greet
+        uses: ./.github/actions/setup-and-greet
+        with:
+          name: ${{ github.actor }}
+          language: hindi
+
+      - name: Prints the message
+        run: |
+          echo "Greeted: ${{ steps.greet.outputs.greeted }}
+
+          
+        
