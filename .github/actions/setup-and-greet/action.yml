@@ -1,0 +1,38 @@
+name: Composite Action
+
+inputs:
+ name: 
+   description: "persons name"
+   required: true
+   
+ language:
+  description: "greeting language"
+  default: english
+  required: false
+
+outputs:
+  greeted: 
+    value: ${{ steps.greet.outputs.greeted }} 
+  
+runs:
+  using: "composite"
+  steps:
+   - name: Greet
+     id:   greet
+     shell: bash
+     run: |
+       if [ "${{ inputs.language }}" = "english" ]; then
+        echo "Hello ${{ inputs.name }}"
+     
+       elif [ "${{ inputs.language }}" = "hindi" ]; then
+        echo "Namstey ${{ inputs.name }}"
+
+       else 
+        echo "wrong input"
+       fi
+
+       echo "CURRENT_OS: ${{ runner.os }} & CURRENT_DATE: $(date +%d-%m-%y)"
+       echo "greeted=true" >> $GITHUB_OUTPUT  
+    
+    
+ 
