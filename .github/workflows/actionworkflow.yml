@@ -4,19 +4,22 @@ on:
    branches: [ main ]
 
 jobs:
-  Call_CompositeAction:
+  Call-CompositeAction:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        
       - name: Calls Greet
         id: greet
-        uses: ./.github/actions/setup-and-greet/action.yml
+        uses: ./.github/actions/setup-and-greet/
         with:
           name: ${{ github.actor }}
           language: hindi
 
       - name: Prints the message
         run: |
-          echo "Greeted: ${{ steps.greet.outputs.greeted }}
+          echo "Greeted: ${{ steps.greet.outputs.greeted }}"
 
           
         
