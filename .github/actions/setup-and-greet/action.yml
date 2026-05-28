@@ -1,5 +1,7 @@
 name: Composite Action
 
+description: "greets user"
+
 inputs:
  name: 
    description: "persons name"
@@ -11,8 +13,9 @@ inputs:
   required: false
 
 outputs:
-  greeted: 
-    value: ${{ steps.greet.outputs.greeted }} 
+ greeted: 
+  description: "Prints greet message"
+  value: ${{ steps.greet.outputs.greeted }} 
   
 runs:
   using: "composite"
