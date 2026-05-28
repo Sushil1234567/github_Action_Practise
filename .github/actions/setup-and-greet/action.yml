@@ -27,7 +27,7 @@ runs:
         echo "Hello ${{ inputs.name }}"
      
        elif [ "${{ inputs.language }}" = "hindi" ]; then
-        echo "Namstey ${{ inputs.name }}"
+        echo "Namastey ${{ inputs.name }}"
 
        else 
         echo "wrong input"
