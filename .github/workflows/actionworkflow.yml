@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Calls Greet
         id: greet
-        uses: ./.github/actions/setup-and-greet
+        uses: ./.github/actions/setup-and-greet/action.yml
         with:
           name: ${{ github.actor }}
           language: hindi
