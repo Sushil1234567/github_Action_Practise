@@ -1,7 +1,7 @@
 name: PR Events
 on:
  pull_request: 
-   types: [reopened]
+   types: [closed]
    branches: [main]
 
 
