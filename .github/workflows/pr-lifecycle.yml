@@ -22,11 +22,10 @@ jobs:
         run:  echo "Target branch:- ${{ github.base_ref }}"
 
       - name: Print PR Merge Status
-        run:  |
-           if [ "${{ github.event.pull_request.merged }}" == "true" ]; then
-              echo "Merge Complete"
-           else 
-              echo "Merge Incomplete"
-           fi  
+        if:   github.event.pull_request.merged == true
+        run:  echo "Merge Complete"
+
+
+         
 
            
