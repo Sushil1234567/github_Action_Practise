@@ -5,3 +5,4 @@ synchronizeevent3
 synchronizeevent5
 synchronizeevent6
 synchronizeevent7
+synchronizeevent8
