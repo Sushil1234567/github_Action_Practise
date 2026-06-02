@@ -1,0 +1,32 @@
+name: PR Events
+on:
+ pull_request: 
+   types: [opened]
+   branches: [main]
+
+
+jobs:
+  Event-Details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Event Type
+        run:  echo "Event type:- ${{ github.event.action }}"
+
+      - name: Print PR title
+        run:  echo "PR title:- ${{ github.event.pull_request.title }}"
+
+      - name: Print Source Branch
+        run:  echo "Source branch:- ${{ github.head_ref }}"
+
+      - name: Print Target Branch
+        run:  echo "Target branch:- ${{ github.base_ref }}"
+
+      - name: Print PR Merge Status
+        run:  |
+           if [ "${{ github.event.pull_request.merged }}" == "true" ]; then
+              echo "Merge Complete"
+           else 
+              echo "Merge Incomplete"
+           fi  
+
+           
