@@ -25,13 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read the branch name
-        run:  echo "Branch:- ${{ github.head_ref }}
+        run:  echo "Branch:- ${{ github.head_ref }}"
 
       - name: Validate file
         run:  |
-         for i in $( git diff --name-only origin/main...HEAD )
-         do 
-           if [ "$i" != feature/* && "$i" != fix/* && "$i" != docs/* ];then
+         for i in $GITHUB_HEAD_REF;do
+           if [[ "$i" != feature/* && "$i" != fix/* && "$i" != docs/* ]];then
                echo "Invalid pattern: $i"
                exit 1
            fi
@@ -41,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Reads the PR body
-        run:  echo "PR is:- ${{ github.event.pull_request.body }}
+        run:  echo "${{ github.event.pull_request.body }}"
 
       - name: Check PR body
         if:   ${{ github.event.pull_request.body == '' }}
