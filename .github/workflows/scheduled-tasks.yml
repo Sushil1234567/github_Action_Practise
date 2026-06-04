@@ -1,0 +1,24 @@
+name: Scheduled Workflow
+on:
+ schedule:
+   - cron: 30 2 * * 1
+   - cron: 0 */6 * * *
+   
+ workflow_dispatch:
+   
+
+jobs:
+  Health-Check:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Check Health
+        uses: jtalk/url-health-check-action@v5
+        with:
+          url: https://crontab.guru/
+          max-attempts: 5
+          retry-delays: 3s
+
+          
+          
+ 
+     
