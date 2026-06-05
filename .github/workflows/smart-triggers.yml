@@ -4,6 +4,7 @@ on:
   paths:
    - 'src/**'
    - 'app/**'
+  branches: [main]
 
 jobs:
    detect-changes:
