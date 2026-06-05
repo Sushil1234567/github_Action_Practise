@@ -1,0 +1,41 @@
+name: Smart Triggers
+on:
+ push:
+  paths:
+   - 'src/**'
+   - 'app/**'
+
+jobs:
+   detect-changes:
+      runs-on: ubuntu-latest
+      steps:
+         - uses: actions/checkout@v4
+           with: 
+            fetch-depth: 0
+
+         - name: Print Changed Directories
+           run: |
+            changedfiles=$(git diff --name-only HEAD~1 HEAD)
+                                 #OR 
+            #changedfiles=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+
+            for i in $chnagedfiles
+            do
+             if [[ "$i" == src/* ]];then
+              echo "Directory: src"
+             elif [[ "$i" == app/* ]]
+              echo "Directory: app"
+             fi
+            done 
+
+             
+
+
+
+            
+
+           
+
+           
+  
+
