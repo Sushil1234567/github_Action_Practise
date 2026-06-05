@@ -19,7 +19,7 @@ jobs:
                                  #OR 
             #changedfiles=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
 
-            for i in $chnagedfiles
+            for i in $changedfiles
             do
              if [[ "$i" == src/* ]];then
               echo "Directory: src"
