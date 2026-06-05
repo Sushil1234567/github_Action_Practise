@@ -24,7 +24,7 @@ jobs:
             do
              if [[ "$i" == src/* ]];then
               echo "Directory: src"
-             elif [[ "$i" == app/* ]]
+             elif [[ "$i" == app/* ]];then
               echo "Directory: app"
              fi
             done 
