@@ -1,0 +1,16 @@
+name: Smart Triggers
+on:
+ push:
+   paths-ignore:
+     - '*.md' 
+     - 'docs/**'
+   branches: [main] 
+
+jobs:
+  Message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prints the message
+        run:  echo "Not pushed to md or docs"
+
+        
