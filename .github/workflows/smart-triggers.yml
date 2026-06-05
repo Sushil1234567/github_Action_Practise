@@ -16,9 +16,9 @@ jobs:
 
          - name: Print Changed Directories
            run: |
-            changedfiles=$(git diff --name-only HEAD~1 HEAD)
+            #changedfiles=$(git diff --name-only HEAD~1 HEAD)
                                  #OR 
-            #changedfiles=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+            changedfiles=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
 
             for i in $changedfiles
             do
