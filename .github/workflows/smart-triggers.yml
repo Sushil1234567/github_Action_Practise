@@ -29,9 +29,35 @@ jobs:
              fi
             done 
 
-             
+#   OR  
 
+#name: Smart Triggers
+#on:
+# push:
+#  paths:
+#   - 'src/**'
+#   - 'app/**'
 
+#jobs:
+#   detect-changes:
+#      runs-on: ubuntu-latest
+#      steps:
+#         - uses: actions/checkout@v4
+         
+#         - name: Get Changed files
+#           id:   changed-files
+#           uses: tj-actions/changed-files@v6
+
+#         - name: Print Directories
+#           run: | 
+#             for i in ${{ steps.changed-files.outputs.all_changed_files }}
+#             do 
+#              if [[ "$i" == src/* ]];then
+#               echo "Directory: src"
+#              elif [[ "$i" == app/* ]];then
+#               echo "Directory: app"
+#              fi 
+#             done
 
             
 
