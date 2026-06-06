@@ -18,7 +18,7 @@ jobs:
               exit 1
 
 
-
+#OR
 #jobs:
 #  deploy:
 #    if: ${{ github.event.workflow_run.conclusion == 'success' }}
