@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Message on completion
         if:   ${{ github.event.workflow_run.conclusion == 'success' }}
-        run:  echo "Success !"
+        run:  echo "Deploy Success !"
 
       - name: Message on failure
         if:   ${{ github.event.workflow_run.conclusion != 'success' }}
