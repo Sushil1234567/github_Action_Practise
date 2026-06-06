@@ -8,6 +8,6 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - name: Print Message
-       run:  echo "Workflow success !"
+       run:  echo "Test Run Success !(before deploy)"
 
        
